@@ -1,38 +1,205 @@
+body {
+  height: 100vmin;
+  background-color: #FAFAFA ;
+}
+
+html, body, #root, .App {
+  height: 100%;
+}
+
+a { 
+  color: lightgray;
+  text-decoration: none;
+}
+
+a:hover{
+  color: lightgray;
+}
+
 .App {
-  text-align: center;
+  height: 100vmin;
+  width: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.brand-name{
+  font-family: 'Lobster', cursive;
+  font-size: 24px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.follow {
+  color: #3AACF7;
+}
+
+.Login{
+  width: 25%;
+  height: 50%;
+  min-width: 25%;
+  padding: 25px;
+  border-radius: 35px;
+  position: absolute; /*Can also be `fixed`*/
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+  max-width: 100%;
+  max-height: 100%;
+
+}
+
+.Login-Form {
+  height: 100%;
+  border-radius: 35px;
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(246,244,243,1) 8%, rgba(104,82,70,1) 96%);
+}
+
+.Leather {
+  background-image: url(./img/leather.jpg);
+  border-top-left-radius: 25px;
+  border-top-left-radius: 25px;
+  width: 100%;
+  height: 25%;
+  padding-right: 10px;
+  padding-top: 10px;
+  opacity: 1;
+}
+
+.sub-lens{
+  border-radius: 90%;
+  background-image: url(./img/lens.png);
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  float: right;
+  width: 90px;
+  height: 90px;
+  
+}
+
+.main-lens{
+  border-radius: 90%;
+  background-image: url(./img/lens.jpg);
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  width: 220px;
+  height: 220px;
+  margin-left: auto; 
+  margin-right: auto; 
+  
+}
+
+.main-lens-background{
+  border-radius: 50%;
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(246,244,243,1) 8%, rgba(104,82,70,1) 96%);
+ 
+  width: 250px;
+  height: 250px;
+  padding-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -30px;
+  
+}
+
+
+.circle-icon{
+  border: 1px solid;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.profile-tabs{
+  padding-top: 10px;
+  font-size: 15px;
+  
+}
+
+.panel{
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.story-panel{
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.navbar-row{
+  width: 100%;
+}
+
+
+.side-bar{
+
+  font-size: 12px;
+
+}
+
+.misc-dots{
+  padding-bottom: 10px;
+}
+
+.comment-section{
+  font-size: 15px;
+}
+
+.user-name{
+  font-weight: 600;
+
+}
+
+.num-likes{
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+
+  
+.side-bar{
+
+  font-size: 12px;
+  display: none;
+}
+
+.post-comment-row{
+  display: none;
+}
+
+
+
+}
+
+@media (max-width: 768px) {
+
+  
+  .search-bar{
+  
+
+    display: none;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .navbar-row{
+    width: auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .panel{
+    border: none;
+    border-radius: 0px;
+    background-color: inherit
   }
-}
+  
+  
+  
+  }
+
+
