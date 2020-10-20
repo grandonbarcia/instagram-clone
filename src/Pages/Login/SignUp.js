@@ -54,7 +54,7 @@ const SignUp = ({ history }) => {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col className="text-center mb-1">
+                                    <Col className="text-center mb-3" style={{ color: '#958E8E', fontWeight: '600', fontSize: '18px' }}>
                                         Sign up to see photos and videos of your friends
                                 </Col>
                                 </Row>
@@ -102,7 +102,7 @@ const SignUp = ({ history }) => {
                                     </Row>
                                     <Row className="justify-content-md-center">
                                         <Col className="text-center">
-                                            <Button onClick={() => handleSignup()} variant="light" type="button" block>
+                                            <Button onClick={() => handleSignup()} variant="primary" type="button" block disabled={values.formFilled}>
                                                 Sign up
                                         </Button>
                                         </Col>
@@ -115,8 +115,8 @@ const SignUp = ({ history }) => {
 
                     </Col>
                 </Row>
-                <Row className="justify-content-md-center mt-5 pt-3" style={{ height: '10%' }}>
-                    <Col className="text-center my-auto pt-3" xl={4} style={{ backgroundColor: '#ffffff', border: '1px solid lightgrey', height: '100%' }}>
+                <Row className="justify-content-md-center" style={{ height: '10%', marginTop: '75px' }}>
+                    <Col className="text-center my-auto pt-4" xl={4} style={{ backgroundColor: '#ffffff', border: '1px solid lightgrey', height: '100%' }}>
                         Have an account? <span onClick={() => { return history.push('/login') }}>Login</span>
                     </Col>
 

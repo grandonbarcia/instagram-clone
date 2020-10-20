@@ -14,7 +14,8 @@ import ShowError from './ShowError'
 const Login = ({ history }) => {
     const dispatch = useAuthDispatch() //get the dispatch method from the useDispatch custom hook
     const user = useAuthState();
-    const { handleChange, login } = useForm('login');
+    const { handleChange, login, filled } = useForm('login');
+    console.log(filled)
     const handleLogin = async () => {
         try {
             //loginUser action makes the request and handles all the neccessary state changes
@@ -28,15 +29,13 @@ const Login = ({ history }) => {
         }
     }
 
-    console.log(user)
-
-
     if (user.isLoggedIn) {
 
         return (
 
             <Redirect to={{ pathname: '/feed' }} />
         )
+
 
 
     } else {
@@ -66,8 +65,10 @@ const Login = ({ history }) => {
                                     <Row className="justify-content-md-center">
                                         <Col className="text-center">
                                             <Button onClick={handleLogin}
-                                                variant="light"
-                                                type="button" block>
+                                                variant="primary"
+                                                type="button"
+                                                disabled={filled}
+                                                block>
                                                 Login
                                             </Button >
                                         </Col>
@@ -107,7 +108,6 @@ const Login = ({ history }) => {
                     <Col className="text-center my-auto pt-3" xl={4} style={{ backgroundColor: '#ffffff', border: '1px solid lightgrey', height: '100%' }}>
                         Don't have an account? <span onClick={() => { return history.push('/signup') }}>Sign Up</span>
                     </Col>
-
                 </Row>
             </>
         )

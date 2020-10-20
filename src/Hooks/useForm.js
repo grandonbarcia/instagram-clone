@@ -7,7 +7,8 @@ const useForm = (form) => {
         fName: '',
         lName: '',
         username: '',
-        password: ''
+        password: '',
+
 
     });
 
@@ -15,6 +16,10 @@ const useForm = (form) => {
         username: '',
         password: '',
     });
+
+
+    let [filled, isFormFilled] = useState(true)
+
 
     const [errors, setErrors] = useState({});
 
@@ -24,14 +29,21 @@ const useForm = (form) => {
             case 'signup':
                 setValues({
                     ...values,
-                    [name]: value
+                    [name]: value,
                 });
+                isFormFilled(checkFormInput(value))
+
             case 'login':
                 setLogin({
                     ...login,
-                    [name]: value
+                    [name]: value,
                 });
+                isFormFilled(checkFormInput(login))
+
         }
+
+
+
     }
 
     const clearForm = () => {
@@ -39,7 +51,23 @@ const useForm = (form) => {
         setLogin({});
     }
 
-    return { handleChange, clearForm, values, login };
+    const checkFormInput = (form) => {
+        let count = 0;
+        let arr = Object.entries(form);
+        for (let [key, value] of arr) {
+            if (value.length > 4) {
+                count++;
+            }
+        }
+        if (count == arr.length) {
+            return false
+        }
+
+        return true
+
+    }
+
+    return { handleChange, clearForm, values, login, filled };
 }
 
 export default useForm; 
