@@ -15,11 +15,11 @@ const Login = ({ history }) => {
     const dispatch = useAuthDispatch() //get the dispatch method from the useDispatch custom hook
     const user = useAuthState();
     const { handleChange, login, filled } = useForm('login');
-    console.log(filled)
     const handleLogin = async () => {
         try {
             //loginUser action makes the request and handles all the neccessary state changes
             let response = await loginUser(dispatch, login)
+            console.log(response);
             if (response) {
                 //Navigate to feed on success
                 return history.push('/feed')
