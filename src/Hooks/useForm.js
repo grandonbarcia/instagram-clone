@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const useForm = (form) => {
 
-    let [values, setValues] = useState({
+    let [signupInput, setSignupInput] = useState({
         email: '',
         fName: '',
         lName: '',
@@ -12,13 +12,13 @@ const useForm = (form) => {
 
     });
 
-    let [login, setLogin] = useState({
+    let [loginInput, setLoginInput] = useState({
         username: '',
         password: '',
     });
 
 
-    let [filled, isFormFilled] = useState(true)
+    let [isFilled, isFormFilled] = useState(true)
 
 
     const [errors, setErrors] = useState({});
@@ -27,18 +27,18 @@ const useForm = (form) => {
         const { name, value } = e.target;
         switch (form) {
             case 'signup':
-                setValues({
-                    ...values,
+                setSignupInput({
+                    ...signupInput,
                     [name]: value,
                 });
-                isFormFilled(checkFormInput(value))
+                isFormFilled(checkFormPopulation(value))
 
             case 'login':
-                setLogin({
-                    ...login,
+                setLoginInput({
+                    ...loginInput,
                     [name]: value,
                 });
-                isFormFilled(checkFormInput(login))
+                isFormFilled(checkFormPopulation(loginInput))
 
         }
 
@@ -47,11 +47,11 @@ const useForm = (form) => {
     }
 
     const clearForm = () => {
-        setValues({});
-        setLogin({});
+        setSignupInput({});
+        setLoginInput({});
     }
 
-    const checkFormInput = (form) => {
+    const checkFormPopulation = (form) => {
         let count = 0;
         let arr = Object.entries(form);
         for (let [key, value] of arr) {
@@ -67,7 +67,7 @@ const useForm = (form) => {
 
     }
 
-    return { handleChange, clearForm, values, login, filled };
+    return { handleChange, clearForm, signupInput, loginInput, isFilled };
 }
 
 export default useForm; 
