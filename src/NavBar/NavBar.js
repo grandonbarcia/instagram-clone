@@ -25,7 +25,7 @@ const Navi = ({ history, location }) => {
         // Call the logout action
         logout(dispatch)
 
-        // Navigate to logout page on logout
+        // Navigate to login page on logout
         history.push('/login')
 
     }
@@ -36,15 +36,14 @@ const Navi = ({ history, location }) => {
         backgroundColor: '#FFFFFF'
     }
 
-    console.log(location.pathname);
+
 
     if (window.localStorage.user) {
         return (
-
             <Navbar variant="light" style={style}>
-                <Container fluid>
+                <Container>
                     <Row className="justify-content-md-center navbar-row " >
-                        <Col xl={6}>
+                        <Col xl={10}>
                             <Row className="justify-content-md-center">
                                 <Col className="text-left" xs={4} md={4} lg={4} xl={4}>
                                     <Navbar.Brand className="brand-name">Instagram</Navbar.Brand>
