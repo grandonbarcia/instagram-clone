@@ -18,7 +18,6 @@ const App = () => {
               path={route.path}
               component={route.component}
               isProtected={route.isProtected}
-
             />
           ))}
         </Switch>

@@ -32,7 +32,8 @@ export const loginUser = async (dispatch, user) => {
         dispatch({ type: 'REQUEST_LOGIN' });
         let response = await fetch(ROOT_URL + 'login', requestOptions);
         let data = await response.json();
-        if (data.isValidated) {
+        console.log(data);
+        if (data.isAuthenticated) {
             console.log(data)
             dispatch({ type: 'LOGIN_SUCCESS', payload: data });
             localStorage.setItem('user', JSON.stringify(data.username));

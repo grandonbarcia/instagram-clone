@@ -11,7 +11,7 @@ const SignUp = ({ history }) => {
     const dispatch = useAuthDispatch() //get the dispatch method from the useDispatch custom hook
 
     //Get useForm hook to handle form input and local state changes 
-    const { handleChange, values } = useForm('signup');
+    const { handleChange, signupInput } = useForm('signup');
 
     //Hold Error messages 
     const [error, setError] = useState({
@@ -24,9 +24,9 @@ const SignUp = ({ history }) => {
     const handleSignup = async () => {
 
         try {
-            let response = await signupUser(dispatch, values)
-            console.log(response);
-            if (response.error) {
+            let response = await signupUser(dispatch, signupInput)
+            let data = response.json();
+            if (data.error) {
                 setError(response);
             }
         } catch (error) {
@@ -76,24 +76,24 @@ const SignUp = ({ history }) => {
                                 </Row>
                                 <Form>
                                     <Form.Group>
-                                        <Form.Control name="email" value={values.email} onChange={handleChange} type="email" placeholder="Email" />
+                                        <Form.Control name="email" value={signupInput.email} onChange={handleChange} type="email" placeholder="Email" />
                                     </Form.Group>
                                     <Form.Group >
                                         <Row>
                                             <Col>
-                                                <Form.Control name="fName" value={values.fName} onChange={handleChange} type="name" placeholder="First" />
+                                                <Form.Control name="fName" value={signupInput.fName} onChange={handleChange} type="name" placeholder="First" />
                                             </Col>
                                             <Col>
-                                                <Form.Control name="lName" value={values.lName} onChange={handleChange} type="name" placeholder="Last" />
+                                                <Form.Control name="lName" value={signupInput.lName} onChange={handleChange} type="name" placeholder="Last" />
                                             </Col>
                                         </Row>
                                     </Form.Group>
 
                                     <Form.Group>
-                                        <Form.Control name="username" value={values.username} onChange={handleChange} type="Username" placeholder="Username" />
+                                        <Form.Control name="username" value={signupInput.username} onChange={handleChange} type="Username" placeholder="Username" />
                                     </Form.Group>
                                     <Form.Group>
-                                        <Form.Control name="password" value={values.password} onChange={handleChange} type="password" placeholder="Password" />
+                                        <Form.Control name="password" value={signupInput.password} onChange={handleChange} type="password" placeholder="Password" />
                                     </Form.Group>
                                     <Row>
                                         <Col className="text-center">
@@ -102,7 +102,7 @@ const SignUp = ({ history }) => {
                                     </Row>
                                     <Row className="justify-content-md-center">
                                         <Col className="text-center">
-                                            <Button onClick={() => handleSignup()} variant="primary" type="button" block disabled={values.formFilled}>
+                                            <Button onClick={() => handleSignup()} variant="primary" type="button" block disabled={signupInput.formFilled}>
                                                 Sign up
                                         </Button>
                                         </Col>
@@ -115,9 +115,13 @@ const SignUp = ({ history }) => {
 
                     </Col>
                 </Row>
-                <Row className="justify-content-md-center" style={{ height: '10%', marginTop: '75px' }}>
-                    <Col className="text-center my-auto pt-4" xl={4} style={{ backgroundColor: '#ffffff', border: '1px solid lightgrey', height: '100%' }}>
-                        Have an account? <span onClick={() => { return history.push('/login') }}>Login</span>
+                <Row className="justify-content-md-center" style={{ height: '10%', marginTop: '200px' }}>
+                    <Col className="text-center my-auto" xl={4} style={{ backgroundColor: '#ffffff', border: '1px solid lightgrey', height: '100%' }}>
+                        <Row className=" h-100 justify-content-md-center align-items-center">
+                            <Col className="text-center">
+                                Have an account? <span onClick={() => { return history.push('/login') }}>Login</span>
+                            </Col>
+                        </Row>
                     </Col>
 
                 </Row>

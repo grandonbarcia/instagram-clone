@@ -12,14 +12,17 @@ import { Redirect } from 'react-router-dom';
 import ShowError from './ShowError'
 
 const Login = ({ history }) => {
-    const dispatch = useAuthDispatch() //get the dispatch method from the useDispatch custom hook
+    //Get the dispatch method from the useDispatch custom hook
+    const dispatch = useAuthDispatch()
     const user = useAuthState();
-    const { handleChange, login, filled } = useForm('login');
+
+    //Get handleChange method to save state from form to loginInput and isFilled from the useForm custom hook
+    const { handleChange, loginInput, isFilled } = useForm('login');
+
     const handleLogin = async () => {
         try {
-            //loginUser action makes the request and handles all the neccessary state changes
-            let response = await loginUser(dispatch, login)
-            console.log(response);
+            //LoginUser action makes the request and handles all the neccessary state changes
+            let response = await loginUser(dispatch, loginInput)
             if (response) {
                 //Navigate to feed on success
                 return history.push('/feed')
@@ -30,20 +33,13 @@ const Login = ({ history }) => {
     }
 
     if (user.isLoggedIn) {
-
         return (
-
             <Redirect to={{ pathname: '/feed' }} />
         )
-
-
-
     } else {
-
         return (
-
             <>
-                <Row className="h-75 justify-content-md-center pt-5">
+                <Row className="justify-content-md-center pt-5" style={{ height: '85%' }}>
                     <Col xs={12} md={12} xl={4} style={{ backgroundColor: '#ffffff', border: '1px solid lightgrey' }}>
                         <Row className="justify-content-md-center">
                             <Col className=" align-self-center h-50 mt-5" md={2} xl={10} >
@@ -52,14 +48,12 @@ const Login = ({ history }) => {
                                         Instagram-Clone
                                     </Col>
                                 </Row>
-
-
                                 <Form>
                                     <Form.Group>
-                                        <Form.Control name="username" value={login.username} onChange={handleChange} type="username" placeholder="Phone number, username, or email" />
+                                        <Form.Control name="username" value={loginInput.username} onChange={handleChange} type="username" placeholder="Phone number, username, or email" />
                                     </Form.Group>
                                     <Form.Group>
-                                        <Form.Control name="password" value={login.password} onChange={handleChange} type="password" placeholder="Password" />
+                                        <Form.Control name="password" value={loginInput.password} onChange={handleChange} type="password" placeholder="Password" />
                                     </Form.Group>
                                     <ShowError error={user} />
                                     <Row className="justify-content-md-center">
@@ -67,7 +61,7 @@ const Login = ({ history }) => {
                                             <Button onClick={handleLogin}
                                                 variant="primary"
                                                 type="button"
-                                                disabled={filled}
+                                                disabled={isFilled}
                                                 block>
                                                 Login
                                             </Button >
@@ -93,7 +87,7 @@ const Login = ({ history }) => {
                                     </Col>
                                 </Row>
                                 <Row className="pt-3">
-                                    <Col className="text-center my-auto">
+                                    <Col className="text-center">
                                         Forgot your password?
                                     </Col>
                                 </Row>
@@ -104,9 +98,13 @@ const Login = ({ history }) => {
                     </Col>
                 </Row>
 
-                <Row className="justify-content-md-center pt-3" style={{ height: '10%' }}>
-                    <Col className="text-center my-auto pt-3" xl={4} style={{ backgroundColor: '#ffffff', border: '1px solid lightgrey', height: '100%' }}>
-                        Don't have an account? <span onClick={() => { return history.push('/signup') }}>Sign Up</span>
+                <Row className="justify-content-md-center align-items-center mt-3" style={{ height: '15%' }}>
+                    <Col className="mx-auto" xl={4} style={{ backgroundColor: '#ffffff', border: '1px solid lightgrey', height: '75%' }}>
+                        <Row className="h-100 justify-content-md-center align-items-center" >
+                            <Col className="text-center" xl={12}>
+                                Don't have an account? <span onClick={() => { return history.push('/signup') }}>Sign Up</span>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </>
