@@ -10,8 +10,8 @@ const Posts = () => {
         <Row className="mt-4 mb-5" >
             <Col className="panel ">
                 <Row className="pt-2 pb-2">
-                    <Col className="my-auto" xs={2} md={1}>
-                        <Image src={Virus} width={"100%"} height={"auto"} roundedCircle />
+                    <Col className="my-auto" xs={2} md={1} xl={1}>
+                        <Image src={Virus} width={"35px"} height={"auto"} roundedCircle />
                     </Col>
                     <Col className="my-auto" xs={4} md={4}>
                         <h6>grandonlee_</h6>
