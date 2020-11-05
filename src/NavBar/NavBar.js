@@ -9,6 +9,7 @@ import { FiSettings } from 'react-icons/fi'
 import { CgProfile } from 'react-icons/cg'
 import { BsHeart } from 'react-icons/bs'
 import { useAuthDispatch, logout, useAuthState } from '../Context'
+import Blank_Pic from '../img/blank_profile.png'
 
 
 
@@ -46,7 +47,7 @@ const Navi = ({ history, location }) => {
                         <Col xl={10}>
                             <Row className="justify-content-md-center">
                                 <Col className="text-left" xs={4} md={4} lg={4} xl={4}>
-                                    <Navbar.Brand className="brand-name">Instagram</Navbar.Brand>
+                                    <Navbar.Brand onClick={() => history.push('/feed')} className="brand-name">Instagram</Navbar.Brand>
                                 </Col>
                                 <Col className="search-bar" md={4} lg={4} xl={4} >
                                     <Form inline>
@@ -62,7 +63,7 @@ const Navi = ({ history, location }) => {
                                                 <Nav.Link as={Link} to="/messages"><FaRegPaperPlane size={25} /></Nav.Link>
                                                 <Nav.Link as={Link} to="/explore"><ImCompass2 size={25} /></Nav.Link>
                                                 <Nav.Link as={Link} to="/"><BsHeart size={25} /></Nav.Link>
-                                                <NavDropdown alignRight title={<Image src={Virus} width={"35px"} height={"35px"} roundedCircle />}>
+                                                <NavDropdown alignRight title={<Image src={Blank_Pic} width={"35px"} height={"35px"} roundedCircle />}>
                                                     <NavDropdown.Item as={Link} to="/profile" ><CgProfile className="mr-2" />Profile</NavDropdown.Item>
                                                     <NavDropdown.Item><BsBookmark className="mr-2" />Saved</NavDropdown.Item>
                                                     <NavDropdown.Item><FiSettings className="mr-2" />Settings</NavDropdown.Item>
@@ -74,7 +75,6 @@ const Navi = ({ history, location }) => {
                                             <Nav className="justify-content-end">
                                                 <Button className="mr-1" as={Link} to="/login" variant="primary">Login</Button>
                                                 <Button as={Link} to="/signup" variant="light">Sign Up</Button>
-
                                             </Nav>
                                     }
 
