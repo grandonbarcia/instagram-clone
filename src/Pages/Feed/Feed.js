@@ -11,7 +11,7 @@ import { useAuthState } from '../../Context'
 const Feed = ({ history }) => {
 
     const user = useAuthState();
-    console.log(user);
+
     return (
         <div className="Feed">
             <Row className="justify-content-sm-center justify-content-md-center mt-4">
