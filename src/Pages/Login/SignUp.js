@@ -25,8 +25,8 @@ const SignUp = ({ history }) => {
 
         try {
             let response = await signupUser(dispatch, signupInput)
-            let data = response.json();
-            if (data.error) {
+
+            if (!response.isValidated) {
                 setError(response);
             }
         } catch (error) {
