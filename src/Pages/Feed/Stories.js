@@ -5,6 +5,8 @@ import Teddy from '../../img/teddy.jpg';
 import Martin from '../../img/mlk.jpg';
 import Isaac from '../../img/newton.jpg';
 import Albert from '../../img/einstein.jpg';
+import Abe from '../../img/abe.jpg';
+import Rosa from '../../img/rosa.jpg';
 import { IoIosArrowDropleft } from 'react-icons/io'
 import { IoIosArrowDropright } from 'react-icons/io'
 const Stories = ({ history }) => {
@@ -44,12 +46,12 @@ const Stories = ({ history }) => {
         borderRadius: '50%',
     }
 
-    const users = [Teddy, Martin, Isaac, Albert];
+    const users = [Teddy, Martin, Isaac, Albert, Rosa, Abe];
 
 
     const listUsers = users.map((user, i) =>
 
-        <Col xl={2}>
+        <Col xl={2} key={i}>
             <div style={colorfulBG}>
                 <div style={whiteBG}>
                     <div style={{ ...pic, backgroundImage: `url(${user})` }}>
@@ -73,11 +75,17 @@ const Stories = ({ history }) => {
 
     return (
         <Row className="story-panel pt-2 pb-2">
-
-            <IoIosArrowDropleft />
-            {listUsers}
-            <IoIosArrowDropright />
-
+            <Col className='my-auto' xl={1}>
+                <IoIosArrowDropleft size={25} />
+            </Col>
+            <Col xl={10}>
+                <Row>
+                    {listUsers}
+                </Row>
+            </Col>
+            <Col className='my-auto' xl={1}>
+                <IoIosArrowDropright size={25} />
+            </Col>
         </Row >
     )
 }
