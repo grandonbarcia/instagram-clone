@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col, Button, Image } from 'react-bootstrap'
 import Virus from '../../img/virus.jpg';
+import Blank_Pic from '../../img/blank_profile.png'
 
 const SideBar = () => {
     return (
@@ -8,7 +9,7 @@ const SideBar = () => {
             <Col>
                 <Row className="mb-2">
                     <Col className="pr-0" md={3}>
-                        <Image src={Virus} width={"80%"} height={"auto"} roundedCircle />
+                        <Image src={Blank_Pic} width={"80%"} height={"auto"} roundedCircle />
                     </Col>
                     <Col className="pl-0 my-auto">
                         <Row>
@@ -34,7 +35,7 @@ const SideBar = () => {
                     <Col>
                         <Row>
                             <Col md={2}>
-                                <Image src={Virus} width={"90%"} height={"auto"} roundedCircle />
+                                <Image src={Blank_Pic} width={"90%"} height={"auto"} roundedCircle />
                             </Col>
                             <Col className="p-0" md={6}>
                                 <Row style={{ fontSize: "12px", overflow: "visible", textOverflow: "clip" }}>
@@ -57,7 +58,7 @@ const SideBar = () => {
                     <Col>
                         <Row>
                             <Col md={2}>
-                                <Image src={Virus} width={"90%"} height={"auto"} roundedCircle />
+                                <Image src={Blank_Pic} width={"90%"} height={"auto"} roundedCircle />
                             </Col>
                             <Col className="p-0" md={6}>
                                 <Row style={{ fontSize: "12px", overflow: "visible", textOverflow: "clip" }}>
