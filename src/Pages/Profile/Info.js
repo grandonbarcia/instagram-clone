@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
-import Virus from '../../img/virus.jpg';
+import Blank_Pic from '../../img/blank_profile.png'
 import { FiSettings } from 'react-icons/fi'
 
 const Info = () => {
@@ -11,7 +11,7 @@ const Info = () => {
     return (
         <Row>
             <Col className="text-center" md={4}>
-                <Image src={Virus} width={"150px"} height={"auto"} roundedCircle thumbnail />
+                <Image src={Blank_Pic} width={"150px"} height={"auto"} roundedCircle thumbnail />
             </Col>
             <Col md={8}>
                 <Row className="pb-3">
