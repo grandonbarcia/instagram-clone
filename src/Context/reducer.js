@@ -6,7 +6,11 @@ let id = localStorage.getItem('id')
     ? JSON.parse(localStorage.getItem('id'))
     : '';
 
-let isLoggedIn = user && id ? true : false
+let jwt = localStorage.getItem('jwt')
+    ? JSON.parse(localStorage.getItem('jwt'))
+    : '';
+
+let isLoggedIn = user && id && jwt ? true : false
 
 
 const ACTIONS = {

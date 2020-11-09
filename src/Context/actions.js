@@ -38,6 +38,7 @@ export const loginUser = async (dispatch, user) => {
             dispatch({ type: 'LOGIN_SUCCESS', payload: data });
             localStorage.setItem('user', JSON.stringify(data.username));
             localStorage.setItem('id', JSON.stringify(data._id));
+            localStorage.setItem('jwt', JSON.stringify(data.jwt));
             return data;
         } else {
             console.log(data);
