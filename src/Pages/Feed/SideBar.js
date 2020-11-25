@@ -2,6 +2,7 @@ import React from 'react'
 import { Row, Col, Button, Image } from 'react-bootstrap'
 import Virus from '../../img/virus.jpg';
 import Blank_Pic from '../../img/blank_profile.png'
+import SuggestionList from './SuggestionList';
 
 const SideBar = () => {
     return (
@@ -25,63 +26,7 @@ const SideBar = () => {
 
                     </Col>
                 </Row>
-                <Row className="mb-3">
-                    <Col md={8} style={{ color: '#BDBDBD', fontWeight: '500', fontSize: '16px' }}>Suggestions For You
-                    </Col>
-                    <Col md={3} style={{ fontWeight: '600' }} className="text-right">See All
-                    </Col>
-                </Row>
-                <Row className="mb-2">
-                    <Col>
-                        <Row>
-                            <Col md={2}>
-                                <Image src={Blank_Pic} width={"90%"} height={"auto"} roundedCircle />
-                            </Col>
-                            <Col className="p-0" md={6}>
-                                <Row style={{ fontSize: "12px", overflow: "visible", textOverflow: "clip" }}>
-                                    <Col md={12}>
-                                        grandonlee_
-                                    </Col>
-                                    <Col md={12} style={{ overflow: "visible", textOverflow: "clip" }}>
-                                        followed by  grandonlee_
-                                    </Col>
-                                </Row>
-
-                            </Col>
-                            <Col className="follow text-right" style={{ fontSize: "12px", color: '#3AACF7', fontWeight: '700' }} md={3}>
-                                Follow
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Row>
-                            <Col md={2}>
-                                <Image src={Blank_Pic} width={"90%"} height={"auto"} roundedCircle />
-                            </Col>
-                            <Col className="p-0" md={6}>
-                                <Row style={{ fontSize: "12px", overflow: "visible", textOverflow: "clip" }}>
-                                    <Col md={12}>
-                                        grandonlee_
-                                    </Col>
-                                    <Col md={12} style={{ overflow: "visible", textOverflow: "clip" }}>
-                                        Suggested For You
-                                    </Col>
-                                </Row>
-
-                            </Col>
-                            <Col className="follow text-right" style={{ fontSize: "12px", color: '#3AACF7', fontWeight: '700' }} md={3}>
-                                Follow
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        {/* footer */}
-                    </Col>
-                </Row>
+                <SuggestionList />
             </Col >
         </Row >
     )

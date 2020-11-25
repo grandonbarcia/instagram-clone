@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Stories from './Stories';
@@ -11,6 +11,13 @@ import { useAuthState } from '../../Context'
 const Feed = ({ history }) => {
 
     const user = useAuthState();
+
+    useEffect(() => {
+
+        
+
+
+    }, [])
 
     return (
         <div className="Feed">

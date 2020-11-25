@@ -25,7 +25,6 @@ const SignUp = ({ history }) => {
 
         try {
             let response = await signupUser(dispatch, signupInput)
-
             if (!response.isValidated) {
                 setError(response);
             }

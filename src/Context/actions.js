@@ -29,7 +29,6 @@ export const loginUser = async (dispatch, user) => {
     };
 
     try {
-        dispatch({ type: 'REQUEST_LOGIN' });
         let response = await fetch(ROOT_URL + 'login', requestOptions);
         let data = await response.json();
         console.log(data);
@@ -48,6 +47,22 @@ export const loginUser = async (dispatch, user) => {
     } catch (error) {
         dispatch({ type: 'LOGIN_ERROR', error: error });
         console.log(error);
+    }
+}
+
+export const authUser = async (jwt) => {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(jwt)
+    };
+
+    try {
+        let response = await fetch(ROOT_URL + 'feed', requestOptions);
+        let data = await response.json();
+        console.log(data);
+    } catch {
+
     }
 }
 

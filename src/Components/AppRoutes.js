@@ -15,7 +15,7 @@ const AppRoutes = ({ component: Component, path, isProtected, ...rest }) => {
                 ) : (
                         <>
                             <Navi {...props} />
-                            <Container className="h-75 " fluid={'xl'}>
+                            <Container fluid={'xl'}>
                                 <Component {...props} />
                             </Container>
                         </>

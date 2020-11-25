@@ -42,8 +42,6 @@ const useForm = (form) => {
 
         }
 
-
-
     }
 
     const clearForm = () => {

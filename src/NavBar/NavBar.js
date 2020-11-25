@@ -49,9 +49,9 @@ const Navi = ({ history, location }) => {
                                 <Col className="text-left" xs={4} md={4} lg={4} xl={4}>
                                     <Navbar.Brand onClick={() => history.push('/feed')} className="brand-name">Instagram</Navbar.Brand>
                                 </Col>
-                                <Col className="search-bar" md={4} lg={4} xl={4} >
-                                    <Form inline>
-                                        <FormControl type="text" placeholder="Search" className="" />
+                                <Col className="search-bar my-auto align-items-center" md={4} lg={4} xl={4} >
+                                    <Form style={{ width: "75%", height: '75%', margin: 'auto' }}>
+                                        <FormControl className="my-auto" type="text" placeholder="Search" />
                                     </Form>
                                 </Col>
                                 <Col xs={8} md={4} lg={4} xl={4}>
