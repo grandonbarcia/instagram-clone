@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col, Form, Button, Image } from 'react-bootstrap';
-import usePics from '../../Hooks/usePics';
-
+import { Row, Col, Image } from 'react-bootstrap';
 
 const RANDOM_PIC = 'https://picsum.photos/v2/list?limit=10'
 
@@ -44,7 +42,7 @@ const Explore = () => {
 
         getRandomPics();
 
-    }, []);
+    }, [getRandomPics]);
 
 
     return (

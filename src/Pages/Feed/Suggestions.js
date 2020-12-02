@@ -1,7 +1,6 @@
 import React from 'react'
 import { Row, Col, Image } from 'react-bootstrap'
 import Blank_Pic from '../../img/blank_profile.png'
-import Suggestion from './Suggestions';
 
 const Suggestions = () => {
 

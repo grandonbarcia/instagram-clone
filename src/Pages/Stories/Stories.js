@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Row, Col, Button, Image, Modal } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Row, Col, Image, Modal } from 'react-bootstrap'
 import Virus from '../../img/virus.jpg';
 import Keyboard from '../../img/keyboard1.jpg'
 import Keyboard2 from '../../img/keyboard2.jpg'
@@ -7,8 +7,6 @@ import Keyboard3 from '../../img/keyblade3.png'
 import { useSpring, animated as a } from 'react-spring'
 import { BiLeftArrowCircle, BiRightArrowCircle } from 'react-icons/bi'
 const Stories = () => {
-
-
 
 
 

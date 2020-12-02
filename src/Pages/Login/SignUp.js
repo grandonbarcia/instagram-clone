@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import useForm from '../../Hooks/useForm'
 import ShowError from './ShowError'
 import { AiFillFacebook } from 'react-icons/ai'
-import { Row, Col, Form, Button, Image, Alert } from 'react-bootstrap'
-import { signupUser, useAuthState, useAuthDispatch } from '../../Context'
+import { Row, Col, Form, Button } from 'react-bootstrap'
+import { signupUser, useAuthDispatch } from '../../Context'
 import { Redirect } from 'react-router-dom';
 
 const SignUp = ({ history }) => {

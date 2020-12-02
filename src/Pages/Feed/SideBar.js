@@ -1,6 +1,5 @@
 import React from 'react'
-import { Row, Col, Button, Image } from 'react-bootstrap'
-import Virus from '../../img/virus.jpg';
+import { Row, Col, Image } from 'react-bootstrap'
 import Blank_Pic from '../../img/blank_profile.png'
 import SuggestionList from './SuggestionList';
 

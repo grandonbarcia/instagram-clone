@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { Row, Col, Button, Image, Modal } from 'react-bootstrap'
-import Virus from '../../img/virus.jpg';
+import { Row, Col } from 'react-bootstrap'
 import Teddy from '../../img/teddy.jpg';
 import Martin from '../../img/mlk.jpg';
 import Isaac from '../../img/newton.jpg';

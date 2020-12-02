@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const useForm = (form) => {
 
@@ -21,7 +21,7 @@ const useForm = (form) => {
     let [isFilled, isFormFilled] = useState(true)
 
 
-    const [errors, setErrors] = useState({});
+
 
     const handleChange = e => {
         const { name, value } = e.target;

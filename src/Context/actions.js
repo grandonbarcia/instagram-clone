@@ -1,4 +1,4 @@
-const ROOT_URL = 'http://localhost:5000/';
+const ROOT_URL = 'https://fast-mesa-18398.herokuapp.com/';
 
 
 export const signupUser = async (dispatch, signupPayload) => {
