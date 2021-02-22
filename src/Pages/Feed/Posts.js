@@ -1,10 +1,12 @@
 import React from 'react'
 import { Row, Col, Image, FormControl, Button, InputGroup } from 'react-bootstrap'
 import Virus from '../../img/virus.jpg';
-import SB from '../../img/sb.jpg';
+import Baby from '../../img/Baby.jpg';
 import { FiHeart } from 'react-icons/fi'
 import { FaRegComment, FaRegPaperPlane, FaRegBookmark } from 'react-icons/fa'
 import '../../App.css'
+
+
 const Posts = () => {
     return (
         <Row className="mt-4 mb-5" >
@@ -22,7 +24,7 @@ const Posts = () => {
                 </Row>
                 <Row>
                     <Col className="p-0">
-                        <Image src={SB} width={"100%"} height={"auto"} />
+                        <Image src={Baby} width={"100%"} height={"auto"} />
                     </Col>
                 </Row>
                 <Row className="pl-3 pr-3">
