@@ -26,4 +26,3 @@ npm start
 ![](/public/img/IC2.JPG)
 
 
-![](/public/img/IC3.JPG)
