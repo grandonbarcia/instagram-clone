@@ -19,12 +19,12 @@ const routes = [
     {
         path: "/",
         exact: true,
-        component: LandingPage,
+        component: Login,
         isProteced: false
     },
     {
-        exact: false,
         path: "/login",
+        exact: true,
         component: Login,
         isProtected: false
     },
