@@ -20,9 +20,6 @@ const useForm = (form) => {
 
     let [isFilled, isFormFilled] = useState(true)
 
-
-
-
     const handleChange = e => {
         const { name, value } = e.target;
         switch (form) {
