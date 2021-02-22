@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import useForm from '../../Hooks/useForm'
 import ShowError from './ShowError'
 import { AiFillFacebook } from 'react-icons/ai'
-import { Row, Col, Form, Button } from 'react-bootstrap'
+import { Row, Col, Form, Button, Image } from 'react-bootstrap'
 import { signupUser, useAuthDispatch } from '../../Context'
 import { Redirect } from 'react-router-dom';
+import AppleStoreButton from '../../img/apple-store.png'
+import GooglePlayButton from '../../img/google-play.png'
 
 const SignUp = ({ history }) => {
     //Get dispatch method from useAuthDispatch hook
@@ -43,7 +45,7 @@ const SignUp = ({ history }) => {
     } else {
         return (
             <>
-                <Row className="d-flex h-75 pt-5 justify-content-md-center">
+                <Row className="pt-5 justify-content-md-center">
                     <Col xs={12} md={12} xl={4} style={{ backgroundColor: '#ffffff', border: '1px solid lightgrey', paddingBottom: '25px' }} >
                         <Row className="justify-content-md-center">
                             <Col className="h-75 " md={3} xl={10}>
@@ -111,11 +113,10 @@ const SignUp = ({ history }) => {
 
                             </Col>
                         </Row>
-
                     </Col>
                 </Row>
-                <Row className="justify-content-md-center" style={{ height: '10%', marginTop: '200px' }}>
-                    <Col className="text-center my-auto" xl={4} style={{ backgroundColor: '#ffffff', border: '1px solid lightgrey', height: '100%' }}>
+                <Row className="justify-content-md-center" style={{ height: '20%', marginTop: '20px' }}>
+                    <Col className="text-center my-auto" xl={4} style={{ backgroundColor: '#ffffff', border: '1px solid lightgrey', height: '50px' }}>
                         <Row className=" h-100 justify-content-md-center align-items-center">
                             <Col className="text-center">
                                 Have an account? <span onClick={() => { return history.push('/login') }}>Login</span>
@@ -123,6 +124,46 @@ const SignUp = ({ history }) => {
                         </Row>
                     </Col>
 
+                </Row>
+
+                <Row className="justify-content-md-center mt-3 mb-3">
+                    <Col xs={12} md={12} xl={4} className="text-center">
+                        Get the app.
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center">
+                    <Col className="text-right" xl={3}>
+                        <Image src={AppleStoreButton} width={'50%'} height={'auto'} />
+                    </Col>
+                    <Col className="text-left" xl={3}>
+                        <Image src={GooglePlayButton} width={'50%'} height={'auto'} />
+                    </Col>
+                </Row>
+                <Row style={{ marginTop: '50px', marginBottom: '50px', fontSize: '12px', wordSpacing: '10px', color: '#8E8E9B' }}>
+                    <Col>
+                        <Row className="justify-content-md-center text-center">
+                            <Col>
+                                About  Blog  Jobs  Help  API  Privacy  Terms  Top  Accounts  Hastags  Locations
+                            </Col>
+                        </Row>
+                        <Row className="justify-content-md-center text-center" >
+                            <Col>
+                                Beauty
+                           
+                                Dance & Performance
+                            
+                                Fitness
+                            
+                                Food & Drink
+                            
+                                Home & Drink
+                            
+                                Music
+                            
+                                Visual Arts
+                            </Col>
+                        </Row>
+                    </Col>
                 </Row>
             </>
 
