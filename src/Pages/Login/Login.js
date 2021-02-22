@@ -44,23 +44,23 @@ const Login = ({ history }) => {
         return (
             <>
                 <Row className="justify-content-md-center" style={{ marginTop: '75px', height: '100%' }}>
-                    <Col xl={3}>
+                    <Col className="iphones" md={3} lg={3} xl={{span: '3', offset: '2'}}>
                         <Image src={IPhoneBlack} width={'auto'} height={'100%'} fluid />
 
                     </Col>
-                    <Col xl={3} style={{ marginLeft: '-200px' }}>
+                    <Col className="iphones" md={3} lg={3} xl={3} style={{ marginLeft: '-200px' }}>
                         <Image src={IPhoneWhite} width={'auto'} height={'50%'} style={{ marginTop: '20px' }} fluid />
-                        <Image src={Post} width={'auto'} height={'460px'} style={{ position: 'absolute', height: '72.9%', marginLeft: '-238px', marginTop: '85px' }} fluid />
+                        <Image src={Post} width={'auto'} height={'100%'} style={{ position: 'absolute', height: '72.9%', marginLeft: '-238px', marginTop: '85px' }} fluid />
                     </Col>
-                    <Col xl={6}>
-                        <Row className="justify-content-md-center mb-1" style={{ height: '81%' }} >
+                    <Col md={4} lg={6} xl={6}>
+                        <Row className="mb-1" style={{ height: '81%' }} >
                             <Col xs={12} md={12} xl={8} style={{ backgroundColor: '#ffffff', border: '1px solid lightgrey' }}>
                                 <Row className="justify-content-md-center">
-                                    <Col className=" align-self-center h-50 mt-5" md={2} xl={10} >
+                                    <Col className=" align-self-center h-50 mt-5" md={10} xl={10} >
                                         <Row className=" justify-content-md-center mb-4">
                                             <Col style={{ fontSize: '40px', fontFamily: 'Lobster' }} className=" align-self-center text-center pb-3">
                                                 Instagram-Clone
-                                    </Col>
+                                            </Col>
                                         </Row>
                                         <Form>
                                             <Form.Group>
@@ -110,8 +110,8 @@ const Login = ({ history }) => {
                                 </Row>
                             </Col>
                         </Row>
-                        <Row className="justify-content-md-center align-items-center" style={{ height: '10%' }} >
-                            <Col className="mx-auto" xl={8} style={{ backgroundColor: '#ffffff', border: '1px solid lightgrey', height: '75%' }}>
+                        <Row className="align-items-center" style={{ height: '10%' }} >
+                            <Col xl={8} style={{ backgroundColor: '#ffffff', border: '1px solid lightgrey', height: '75%' }}>
                                 <Row className="h-100 justify-content-md-center align-items-center" >
                                     <Col className="text-center" xl={12}>
                                         Don't have an account? <span onClick={() => { return history.push('/signup') }}>Sign Up</span>
@@ -120,16 +120,16 @@ const Login = ({ history }) => {
                             </Col>
                         </Row>
                         <Row className="mb-3">
-                            <Col className="text-center">
+                            <Col xl={8}className="text-center">
                                 Get the app.
                             </Col>
                         </Row>
-                        <Row className="justify-content-md-center">
-                            <Col xl={6} className="text-right">
-                                <Image src={AppleStoreButton} width={'60%'} height={'auto'} />
+                        <Row>
+                            <Col xl={4}>
+                                <Image src={AppleStoreButton} width={'100%'} height={'auto'} />
                             </Col>
-                            <Col xl={6}>
-                                <Image src={GooglePlayButton} width={'60%'} height={'auto'} />
+                            <Col className="text-left" xl={4}>
+                                <Image src={GooglePlayButton} width={'100%'} height={'auto'} />
                             </Col>
                         </Row>
                     </Col>
