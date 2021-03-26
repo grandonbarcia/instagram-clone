@@ -29,6 +29,7 @@ const Login = ({ history }) => {
             let response = await loginUser(dispatch, loginInput)
             if (response) {
                 //Navigate to feed on success
+                console.log(user);
                 return history.push('/feed')
             }
         } catch (error) {

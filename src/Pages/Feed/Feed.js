@@ -14,8 +14,6 @@ const Feed = ({ history }) => {
 
     useEffect(() => {
 
-        
-
 
     }, [])
 

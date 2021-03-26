@@ -10,16 +10,18 @@ const AppRoutes = ({ component: Component, path, isProtected, ...rest }) => {
         <Route
             path={path}
             render={(props) =>
+
                 isProtected && !Boolean(userDetails.id) ? (
                     <Redirect to={{ pathname: '/login' }} />
                 ) : (
-                        <>
-                            <Navi {...props} />
-                            <Container fluid={'xl'}>
-                                <Component {...props} />
-                            </Container>
-                        </>
-                    )
+                    <>
+
+                        <Navi {...props} />
+                        <Container fluid={'xl'}>
+                            <Component {...props} />
+                        </Container>
+                    </>
+                )
             }
             {...rest}
         />

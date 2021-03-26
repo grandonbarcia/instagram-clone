@@ -44,7 +44,7 @@ export const AuthReducer = (initialState, action) => {
         case ACTIONS.LOGIN_SUCCESS:
             return {
                 user: action.payload.username,
-                id: action.payload._id,
+                id: 12345678,
                 isLoggedIn: true,
                 loading: false,
                 isValidated: true
@@ -66,4 +66,4 @@ export const AuthReducer = (initialState, action) => {
         default:
             throw new Error('Unhandled action type: ', action.type);
     }
-}; 
+};

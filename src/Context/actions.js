@@ -29,21 +29,38 @@ export const loginUser = async (dispatch, user) => {
     };
 
     try {
-        let response = await fetch(ROOT_URL + 'login', requestOptions);
-        let data = await response.json();
-        console.log(data);
-        if (data.isAuthenticated) {
-            console.log(data)
-            dispatch({ type: 'LOGIN_SUCCESS', payload: data });
-            localStorage.setItem('user', JSON.stringify(data.username));
-            localStorage.setItem('id', JSON.stringify(data._id));
-            localStorage.setItem('jwt', JSON.stringify(data.jwt));
-            return data;
-        } else {
-            console.log(data);
-            dispatch({ type: 'LOGIN_ERROR', error: data });
-            return;
+        // let response = await fetch(ROOT_URL + 'login', requestOptions);
+        // let data = await response.json();
+
+        const username = user.username === 'username' ? true : false
+        const password = user.password === 'password' ? true : false
+
+
+        if (username && password) {
+            dispatch({ type: 'LOGIN_SUCCESS', payload: user });
+            localStorage.setItem('user', JSON.stringify(user.username))
+            localStorage.setItem('id', JSON.stringify(12345678))
+            localStorage.setItem('jwt', JSON.stringify(12345678));
+            return true;
+
         }
+
+
+        // if (data.isAuthenticated) {
+        //     console.log(data)
+        //     dispatch({ type: 'LOGIN_SUCCESS', payload: data });
+        //     localStorage.setItem('user', JSON.stringify(data.username));
+        //     localStorage.setItem('id', JSON.stringify(data._id));
+        //     localStorage.setItem('jwt', JSON.stringify(data.jwt));
+        //     return data;
+        // } else {
+        //     console.log(data);
+        //     dispatch({ type: 'LOGIN_ERROR', error: data });
+        //     return;
+        // }
+
+
+
     } catch (error) {
         dispatch({ type: 'LOGIN_ERROR', error: error });
         console.log(error);
