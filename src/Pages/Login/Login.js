@@ -14,6 +14,7 @@ import GooglePlayButton from '../../img/google-play.png'
 import IPhoneWhite from '../../img/iphone-white-unfilled.png'
 import IPhoneBlack from '../../img/iphone-black-filled.png'
 import Post from '../../img/instagram_post_3.png'
+import Note from './Note.js'
 
 const Login = ({ history }) => {
     //Get the dispatch method from the useDispatch custom hook
@@ -51,7 +52,7 @@ const Login = ({ history }) => {
                     </Col>
                     <Col className="iphones" md={3} lg={3} xl={3} style={{ marginLeft: '-200px' }}>
                         <Image src={IPhoneWhite} width={'auto'} height={'50%'} style={{ marginTop: '20px' }} fluid />
-                        <Image src={Post} width={'auto'} height={'100%'} style={{ position: 'absolute', height: '72.9%', marginLeft: '-238px', marginTop: '85px' }} fluid />
+                        <Image src={Post} width={'auto'} height={'100%'} style={{ position: 'absolute', height: '390px', marginLeft: '-238px', marginTop: '85px' }} fluid />
                     </Col>
                     <Col md={4} lg={6} xl={6}>
                         <Row className="mb-1" style={{ height: '81%' }} >
@@ -62,6 +63,7 @@ const Login = ({ history }) => {
                                             <Col style={{ fontSize: '40px', fontFamily: 'Lobster' }} className=" align-self-center text-center pb-3">
                                                 Instagram-Clone
                                             </Col>
+                                            <Note/>
                                         </Row>
                                         <Form>
                                             <Form.Group>
@@ -134,7 +136,7 @@ const Login = ({ history }) => {
                             </Col>
                         </Row>
                     </Col>
-
+                   
                 </Row>
                 <Row style={{ marginTop: '100px', fontSize: '12px', wordSpacing: '10px', color: '#8E8E9B' }}>
                     <Col>
