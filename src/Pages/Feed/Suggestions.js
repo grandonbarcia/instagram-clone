@@ -18,10 +18,10 @@ const Suggestions = () => {
                     <Col className="p-0" md={6}>
                         <Row style={title}>
                             <Col md={12}>
-                                grandonlee_
+                                Username
                             </Col>
                             <Col md={12} style={sub__title}>
-                                followed by  grandonlee_
+                                followed by  Username
                              </Col>
                         </Row>
 

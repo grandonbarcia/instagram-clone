@@ -14,12 +14,12 @@ const SideBar = () => {
                     <Col className="pl-0 my-auto">
                         <Row>
                             <Col>
-                                <h6>grandonlee_</h6>
+                                <h6>Username</h6>
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                                <h7 style={{ color: '#BDBDBD', fontWeight: '400', fontSize: '16px' }}>Brandon Garcia</h7>
+                                <h7 style={{ color: '#BDBDBD', fontWeight: '400', fontSize: '16px' }}>Full Name</h7>
                             </Col>
                         </Row>
 
